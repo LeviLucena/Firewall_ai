@@ -22,7 +22,7 @@ Você pode instalar as dependências do projeto utilizando o requirements.txt.
 ## Instalação
 - 1.	Clone o repositório:
 ```
-git clone https://github.com/seu-usuario/firewall_ai.git
+git clone https://github.com/LeviLucena/Firewall_ai.git
 cd firewall_ai
 ```
 
@@ -42,4 +42,5 @@ pip install -r requirements.txt
 > Abra o arquivo ai_helper.py e substitua "SUA_CHAVE_OPENAI" pela sua chave de API da OpenAI:
 ```openai.api_key = "SUA_CHAVE_OPENAI"```
 
-Caso não tenha a chave, você pode obter uma aqui
+## Licença
+Este projeto está sob a licença MIT. Você pode obter uma cópia da licença [aqui](https://opensource.org/licenses/MIT).
