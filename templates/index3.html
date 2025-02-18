@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infra IA - Scanner de Rede</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Infra IA - Scanner de Rede</h1>
+    <form action="/scan" method="post">
+        <label for="target">IP ou Domínio:</label>
+        <input type="text" id="target" name="target" placeholder="192.168.1.1" required>
+        <button type="submit">Escanear</button>
+    </form>
+
+    {% if results %}
+    <h2>Resultados</h2>
+    <pre>{{ results }}</pre>
+    {% endif %}
+</body>
+
+</html>

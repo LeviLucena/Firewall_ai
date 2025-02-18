@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infra IA - Scanner de Rede</title>
+    <!-- Incluindo Bootstrap 3 e Font Awesome (para ícones) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header class="text-center">
+            <h1><i class="fas fa-shield-alt"></i> Firewall IA - Scanner de Rede</h1>
+            <p>Realize a varredura em sua rede e descubra vulnerabilidades com a ajuda de IA.</p>
+        </header>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <!-- Formulário para entrada de IP -->
+                <form action="/scan" method="post" class="well well-lg">
+                    <div class="form-group">
+                        <label for="target"><i class="fas fa-laptop"></i> IP ou Domínio:</label>
+                        <input type="text" id="target" name="target" class="form-control" placeholder="192.168.1.1"
+                            required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                        <i class="fas fa-search"></i> Escanear
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        {% if results %}
+        <div class="row">
+            <div class="col-md-12">
+                <h2><i class="fas fa-check-circle"></i> Resultados da Varredura</h2>
+                <pre class="well well-lg" style="background-color: #f8f9fa;">{{ results }}</pre>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Incluindo jQuery, Bootstrap 3 e Font Awesome -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
